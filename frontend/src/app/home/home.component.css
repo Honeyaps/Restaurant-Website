@@ -1,0 +1,80 @@
+.cards {
+  width: 300px;
+  height: 250px;
+  border: 1px solid none;
+  border-radius: 13px;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid whitesmoke;
+}
+
+h3 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.cards:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.content {
+  padding: 0 0 1rem 0.7rem;
+  font-size: 15px;
+  position: relative;
+}
+
+.cardimg {
+  width: 350px;
+  height: 250px;
+}
+
+#home_div{
+  margin-top: 7%;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  border: 1px solid rgb(208, 208, 208);
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.product-item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 0.7rem;
+}
+
+.oringins{
+flex: 9;
+}
+
+.origins span{
+  border-radius: 2rem;
+  color: rgb(155, 155, 155);
+  font-size: 14px;
+  display: inline-block;
+}
+
+.cook-time{
+  font-size: .8rem;
+  flex: 3;
+  text-align: right;
+}
+
+.price{
+  color: rgb(116, 116, 116);
+  margin-top: 0.6rem;
+}

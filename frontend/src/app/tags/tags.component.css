@@ -1,0 +1,15 @@
+div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 70px;
+}
+
+a{
+    color: rgb(132, 132, 132);
+}
+
+a:hover{
+    color: black;
+    text-decoration: underline;
+}

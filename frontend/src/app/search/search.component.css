@@ -1,0 +1,29 @@
+div{
+    text-align: center;
+    margin: 9% 0 3% 0 ; 
+}
+
+input{
+    height: 41px;
+    width: 50%;
+    border-top-left-radius: 8px ;
+    border-bottom-left-radius: 8px ;
+    border: 1px solid black;
+    font-size: 13px;
+    padding-left: 12px;
+}
+
+button{
+    height: 45px;
+    width: 50px;
+    border-top-right-radius: 8px ;
+    border-bottom-right-radius: 8px ;
+    cursor: pointer;
+    background-color: darkgrey;
+}
+
+button:hover{
+    background-color: lightgray;
+}
+
+
