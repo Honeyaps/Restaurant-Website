@@ -1,1 +1,30 @@
-<p>cart-page works!</p>
+<ul>
+    <li *ngFor="let cartItem of cart.items">
+      <div>
+        <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name" />
+      </div>
+      <div>
+        <a routerLink="/food/{{ cartItem.food.id }}"> {{ cartItem.food.name }} </a>
+      </div>
+      <div>
+        <button (click)="decreaseQuantity(cartItem)">-</button>
+        <span>{{ cartItem.quantity }}</span>
+        <button (click)="increaseQuantity(cartItem)">+</button>
+      </div>
+      <div>
+        <button (click)="removeFromCart(cartItem)">Remove</button>
+      </div>
+      <div>
+        {{ cartItem.price | currency }}
+      </div>
+    </li>
+  </ul>
+  <div class="checkout">
+    <div class="total-count">
+      Total Items: {{ cart.items.length }}
+    </div>
+    <div class="total-price">
+      Total Price: {{ cart.totalPrice | currency }}
+    </div>
+  </div>
+  

@@ -1,14 +1,15 @@
-import { Foods } from "./food";
+// cartItem.ts
+import { Foods } from './food';
 
-export class CartItem{
-    constructor (food:Foods){
-        this.food = food
-    }
+export class CartItem {
+  food: Foods;
+  quantity: number = 1;
 
-    food: Foods;
-    quantity: number = 1;
-    get price(): number{
-        return this.food.price * this.quantity;  
-    }
+  constructor(food: Foods) {
+    this.food = food;
+  }
 
+  get price(): number {
+    return this.food.price * this.quantity;
+  }
 }

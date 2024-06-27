@@ -5,23 +5,23 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  foods:Foods[] = [];
-  constructor(private fs:FoodService, private route:ActivatedRoute) { }
+  foods: Foods[] = [];
+  constructor(private fs: FoodService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      if(params['searchItem'])
-      this.foods = this.fs.getAll().filter(food => food.name.toLowerCase().includes(params['searchItem'].toLowerCase()));
+    this.route.params.subscribe((params) => {
+      if (params['searchItem'])
+        this.foods = this.fs
+          .getAll()
+          .filter((food) =>
+            food.name.toLowerCase().includes(params['searchItem'].toLowerCase())
+          );
       else if (params['tag'])
         this.foods = this.fs.getAllFoodsByTag(params['tag']);
-      else
-      this.foods = this.fs.getAll();
-    })
-
-   
+      else this.foods = this.fs.getAll();
+    });
   }
 }
-
