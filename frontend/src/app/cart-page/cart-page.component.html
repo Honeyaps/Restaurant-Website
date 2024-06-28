@@ -1,30 +1,42 @@
-<ul>
-    <li *ngFor="let cartItem of cart.items">
-      <div>
+<app-not-found
+  [visible]="!cart || cart.items.length <= 0"
+  notFoundMessage="Your cart is empty!"
+  resetLinkText="Continue shopping"
+></app-not-found>
+
+<div *ngIf="cart && cart.items.length > 0" class="container">
+  <ul class="cart-list">
+    <li *ngFor="let cartItem of cart.items" class="cart-item">
+      <div class="cart-item-image">
         <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name" />
       </div>
-      <div>
-        <a routerLink="/food/{{ cartItem.food.id }}"> {{ cartItem.food.name }} </a>
+      <div class="cart-item-details">
+        <a routerLink="/food/{{ cartItem.food.id }}" class="cart-item-name">
+          {{ cartItem.food.name }}
+        </a>
+        <div class="cart-item-quantity">
+          <button (click)="decreaseQuantity(cartItem)" class="btn">-</button>
+          <span class="quantity">{{ cartItem.quantity }}</span>
+          <button (click)="increaseQuantity(cartItem)" class="btn">+</button>
+        </div>
       </div>
-      <div>
-        <button (click)="decreaseQuantity(cartItem)">-</button>
-        <span>{{ cartItem.quantity }}</span>
-        <button (click)="increaseQuantity(cartItem)">+</button>
-      </div>
-      <div>
-        <button (click)="removeFromCart(cartItem)">Remove</button>
-      </div>
-      <div>
-        {{ cartItem.price | currency }}
+      <div class="cart-item-actions">
+        <button (click)="removeFromCart(cartItem)" class="remove">
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        </button>
+        <div class="cart-item-price">
+          {{ cartItem.price | currency }}
+        </div>
       </div>
     </li>
   </ul>
   <div class="checkout">
-    <div class="total-count">
-      Total Items: {{ cart.items.length }}
-    </div>
-    <div class="total-price">
-      Total Price: {{ cart.totalPrice | currency }}
+    <div class="checkout-summary">
+      <div class="total-count">Total Items: {{ cart.items.length }}</div>
+      <div class="total-price">
+        Total Price: {{ cart.totalPrice | currency }}
+      </div>
+      <a routerLink="/checkout" class="checkout-btn">Proceed to checkout</a>
     </div>
   </div>
-  
+</div>

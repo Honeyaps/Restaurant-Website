@@ -10,6 +10,8 @@
   border: 1px solid whitesmoke;
 }
 
+
+
 h3 {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
@@ -31,7 +33,7 @@ h3 {
   height: 250px;
 }
 
-#home_div{
+#home_div {
   margin-top: 7%;
 }
 
@@ -57,24 +59,24 @@ li {
   margin-right: 0.7rem;
 }
 
-.oringins{
-flex: 9;
+.oringins {
+  flex: 9;
 }
 
-.origins span{
+.origins span {
   border-radius: 2rem;
   color: rgb(155, 155, 155);
   font-size: 14px;
   display: inline-block;
 }
 
-.cook-time{
-  font-size: .8rem;
+.cook-time {
+  font-size: 0.8rem;
   flex: 3;
   text-align: right;
 }
 
-.price{
+.price {
   color: rgb(116, 116, 116);
   margin-top: 0.6rem;
 }
